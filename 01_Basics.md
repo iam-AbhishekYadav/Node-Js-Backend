@@ -21,6 +21,27 @@
 <img width="500" height="400"  src="https://github.com/user-attachments/assets/c968de3b-24d1-48dd-afb9-c0d044fe8ef9" />
 
 
+## Installation of Node.js
+
+ **`(1.)`** Install Node from browser.  
+ **`(2.)`** Open folder in which we make our project.  
+ **`(3.)`** Open terminal
+ **`(4.)`** Write Command --> **`npm init`**  
+ **`(5.)`** Fill information if you want.  
+ **`(6.)`** A package.jason file is created.  
+      
+# # File System Operation in Node.js
+
+- The fs (File System) module in Node.js provides an API for interacting with the file system.
+- It allows you to perform operations such as reading, writing, updating, and deleting files.
+- They are essential for server-side applications and scripts.
+
+## Operations on File System
+
+### 1. Open a File
+
+- 
+
 
 
 
