@@ -36,11 +36,6 @@
 - It allows you to perform operations such as reading, writing, updating, and deleting files.
 - They are essential for server-side applications and scripts.
 
-## Operations on File System
-
-### 1. Open a File
-
-- 
 
 
 
