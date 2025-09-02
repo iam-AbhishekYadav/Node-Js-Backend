@@ -5,6 +5,8 @@
 - The Path module is a built-in Node.js module
 - It is provides tools for handling and transforming file paths across different operating systems.
 
+<img width="449" height="337" alt="nodejs-path-module" src="https://github.com/user-attachments/assets/e547a57c-d248-4ec0-9448-6185266fdf32" />
+
 
 ## Special Node.js Constants
 
