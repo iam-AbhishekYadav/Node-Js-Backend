@@ -1,4 +1,4 @@
-# # Node Js Bcakend
+# # Node Js Backend
 
 # # What is Node Js ??
 
@@ -9,12 +9,16 @@
 
 ## Key Features of Node Js
 
-<img src="https://github.com/user-attachments/assets/c5b12235-ac6d-46b9-a4ba-d62327bbd869" width="500" height="400">
+<img src="https://github.com/user-attachments/assets/c5b12235-ac6d-46b9-a4ba-d62327bbd869" width="500" height="350" />
 
-<img src="https://github.com/user-attachments/assets/50692b75-6c5d-4bf6-9f17-8d2147e750da" width="500" height="400">
+## Node Js Architecture
+
+- The architecture of Node.js comprise two main concepts :  
+  **`(i)`** An Asynchronous model that resembes the event-based approach of Javascript.  
+  **`(ii)`** Non-Blocking Input-Output operation.
 
 
-
+<img width="500" height="400"  src="https://github.com/user-attachments/assets/c968de3b-24d1-48dd-afb9-c0d044fe8ef9" />
 
 
 
