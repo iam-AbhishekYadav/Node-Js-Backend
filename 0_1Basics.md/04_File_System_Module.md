@@ -6,6 +6,14 @@
 - It allows you to perform operations such as reading, writing, updating, and deleting files.
 - They are essential for server-side applications and scripts.
 
+
+## File System CURD Operation
+
+- **C**reate ---> Write content to the file. If does not exist, it create one.
+- **R**ead ---> Reads the content of the file asynchronusly and logs it.
+- **U**pdate ---> Appends new content to the file without overwriting the exixting content.
+- **D**elete --->  Delete the file completely.
+
 # # What is Synchronous and Asynchronous approach ?
 
 - There are two methods to apporach File System Module
@@ -22,12 +30,12 @@
 
 ### Syntax :
 ``` js
-fs.method("file path", "data", "options");
+fs.methodSync("file path", "data", "options");
 ```
 
 ### Synchronous Operation
 
-**(1.)** **`Write `** 
+**(1.)** **`Write`** 
 
 - Write data to a file.
 - If the file does not exist, it will be created.
@@ -151,12 +159,51 @@ console.log(renameFile);                                                        
 - **`Use case`** : Best for I/O tasks like reading files, making API calls, database queries, etc.
 **`Benefit`** : Prevents blocking and allows Node.js to handle thousands of requests efficiently.
 
+### Syntax :
+``` js
+fs.method("file path", "data", "options", callback);
+```
 
+### Synchronous Operation
 
+**(1.)** **`Write`** 
 
+``` js
+const fs = require("fs");
+const path = require("path");
 
+const fileName = "Hello.txt";
+const filePath = path.join(__dirname, fileName);
 
+const writeFile = fs.writeFile(
+	filePath,
+	"Hi, I am Abhsishek Yadav",
+	"utf-8",
+	(err) => {
+        if(err) console.log(err);
+        else console.log("No error, Code runs perfectly !!!");                                   // Output : No error, Code runs perfectly !!!
+    }
+);
+```
 
+**(2.)** **`Read`** 
+
+``` js
+const fs = require("fs");
+const path = require("path");
+
+const fileName = "Hello.txt";
+const filePath = path.join(__dirname, fileName);
+
+const readFile = fs.readFile(
+	filePath,
+	"utf-8",
+	(err, data) => {
+        if(err) console.log(err);
+        else console.log("Data in Hello.txt file :", data);                                    // Output : Data in Hello.txt file : Hi, I am Abhsishek Yadav
+    }
+);
+```
 
 
 
