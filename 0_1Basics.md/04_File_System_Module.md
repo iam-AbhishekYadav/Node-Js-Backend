@@ -28,6 +28,7 @@ fs.method("file path", "data", "options");
 ### Synchronous Operation
 
 **(1.)** **`Write `** 
+
 - Write data to a file.
 - If the file does not exist, it will be created.
 - If the file exists, it overwrites the content.
@@ -40,7 +41,7 @@ const fs = require("fs")
 const fileName = "Hello.txt"
 const writeFile = fs.writeFileSync(fileName, "Hello World");
 
-console.log(writeFile);
+console.log(writeFile);                                                             // Output : A Hello.txt file is created With "Hello World" input
 ```
 
 #### Using Path Module
@@ -56,13 +57,91 @@ const filePath = path.join(__dirname, fileName);
 console.log(__dirname);
 
 const writeFile = fs.writeFileSync(filePath, "Hello World");
-console.log(writeFile);
+console.log(writeFile);                                                             // Output : A Hello.txt file is created With "Hello World" input
 ```
 
-**`Read`** 
-**`Append`** 
-**`Unlink`** 
-**`Rename`** 
+**(2.)** **`Read`** 
+
+- Read a file's content.
+- Return it as a string or buffer.
+
+``` js
+const fs = require("fs")
+const path = require("path")
+
+
+const fileName = "Hello.txt";
+const filePath = path.join(__dirname, fileName);
+
+
+const readFile = fs.readFileSync(filePath);
+
+console.log(readFile);                                                             // Output : <Buffer 48 65 6c 6c 6f 20 57 6f 72 6c 64> 
+console.log(readFile.toString());                                                  // Output : Hello World
+
+
+const readFile2 = fs.readFileSync(filePath, "utf-8");
+
+console.log(readFile2);                                                            // Output : Hello World
+```
+
+**(3.)** **`Append`** 
+
+- Update the content of the file.
+- If the file does not exist, it creates the file.
+
+``` js
+const fs = require("fs")
+const path = require("path")
+
+
+const fileName = "Hello.txt";
+const filePath = path.join(__dirname, fileName);
+
+const appendFile = fs.appendFileSync(filePath, "\nI am Abhishek Yadav");
+
+console.log(appendFile);                                                             // Output : Update "Hello.txt" file.
+```
+
+**4.** **`Unlink`** 
+
+- Delete a file by its path.
+- It does not work on directories
+- It is recommended to use fs.rmdir() to remove a directory.
+
+``` js
+const fs = require("fs")
+const path = require("path")
+
+
+const fileName = "Hello.txt";
+const filePath = path.join(__dirname, fileName);
+
+const deletefile = fs.unlinkSync(filePath);
+
+console.log(deletefile);                                                              // Output : "Hello.txt" file is deleted/removed.
+```
+
+**5.** **`Rename`** 
+
+- Rename file from one name to another.
+
+``` js
+const fs = require("fs")
+const path = require("path")
+
+
+const fileName = "Hello.txt";
+const filePath = path.join(__dirname, fileName);
+
+newUpdatedFileName = "UpdatedFile.txt";
+const newFilePath = path.join(__dirname, newUpdatedFileName);
+
+
+const renameFile = fs.renameSync(filePath, newFilePath);
+
+console.log(renameFile);                                                              // Output : "Hello.txt" renamed by "UpdatedFile.txt"
+```
 
 
 ## Asynchronous 
