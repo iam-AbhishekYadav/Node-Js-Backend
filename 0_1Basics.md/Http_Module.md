@@ -20,7 +20,7 @@
 const http = require("http");
 
 const server = http.createServer((req, res)=>{
-    if (req.url == "/") res.write('<h1>Hello, Node.js !!!</h1>');
+    if (req.url == "/") res.write('<h1> Hello, Node.js !!! </h1>');
 
     else res.end();
 });
@@ -41,10 +41,10 @@ console.log("The http server is running on port 500");
 - Send an HTTP request to a server using `http.request()`
 
 ``` js
-const http = require("http");                                    // getting the http module
+const http = require("http");                                  // getting the http module
 
-const port = 3000;                                              // initializing the port no.
-const host = "localhost";                                       // define the hostname
+const port = 3000;                                             // initializing the port no.
+const host = "localhost";                                      // define the hostname
 
 const server = http.createServer ((req, res) => {              // create server 
 res.statusCode = 200;                                          // set to 200 to indicate it is successful 
