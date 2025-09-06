@@ -164,7 +164,7 @@ console.log(renameFile);                                                        
 fs.method("file path", "data", "options", callback);
 ```
 
-### Synchronous Operation
+### Asynchronous Operation
 
 **(1.)** **`Write`** 
 
@@ -180,8 +180,8 @@ const writeFile = fs.writeFile(
 	"Hi, I am Abhsishek Yadav",
 	"utf-8",
 	(err) => {
-        if(err) console.log(err);
-        else console.log("No error, Code runs perfectly !!!");                                   // Output : No error, Code runs perfectly !!!
+        if(err) {console.log(err);}
+        else {console.log("No error, Code runs perfectly !!!");}                                   // Output : No error, Code runs perfectly !!!
     }
 );
 ```
@@ -199,14 +199,40 @@ const readFile = fs.readFile(
 	filePath,
 	"utf-8",
 	(err, data) => {
-        if(err) console.log(err);
-        else console.log("Data in Hello.txt file :", data);                                    // Output : Data in Hello.txt file : Hi, I am Abhsishek Yadav
+        if(err) {console.log(err);}
+        else {console.log("Data in Hello.txt file :", data);}                                    // Output : Data in Hello.txt file : Hi, I am Abhsishek Yadav
     }
 );
 ```
 
+**(3.)** **`Append`** 
 
+``` js
+const fs = require("fs");
+const path = require("path");
 
+const fileName = "Hello.txt";
+const filePath = path.join(__dirname, fileName);
 
+const appendFile = fs.appendFile(filePath, "\nHello, I am Sachin Ydav", "utf-8", (err) => {
+    if (err) { console.log(err);}
+    else {console.log("File has been Updated");
+    }
+});
+``` 
 
+**(4.)** **`Unlink`** 
 
+``` js
+const fs = require("fs");
+const path = require("path");
+
+const fileName = "Hello.txt";
+const filePath = path.join(__dirname, fileName);
+
+const unlinkFile = fs.unlink(filePath, (err) => {
+    if (err) { console.log(err);}
+    else {console.log("File has been Deleted");
+    }
+});
+```
