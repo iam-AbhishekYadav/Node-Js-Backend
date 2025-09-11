@@ -1,6 +1,6 @@
 # # URLs
 
-# # What is UURLs ?
+# # What is URLs ?
 
 - URLs stand for Uniform Resource Location, commonly termed as a web address
 - It is a reference to a web resource that specifies its location on a computer network and a mechanism for retrieving it.
@@ -23,6 +23,50 @@
 
 In Node.js, different URLs can be handle using conditional statements and http module.
 
+``` js
+const http = require('http');
+
+const Port = 3030;
+const HostName = 'localhost';
+
+const server = http.createServer((req, res) => {
+
+	// Home Page
+	// About Page
+	// Product Page
+	// Rest ---> Error
+
+	
+	if (req.url == '/') {
+		res.statusCode = 200;
+		res.setHeader('content-type', 'text/plain');
+		res.end('Welcome to Node.js server by Abhishek Ydav');
+	} else if (req.url == '/about') {
+		res.statusCode = 200;
+		res.setHeader('content-type', 'text/plain');
+		res.end('About Page !!!');
+	} else if (req.url == '/contact') {
+		res.statusCode = 200;
+		res.setHeader('content-type', 'text/plain');
+		res.end('Contact Page !!!');
+	} else if (req.url == '/product') {
+		res.statusCode = 200;
+		res.setHeader('content-type', 'application/json');
+		res.end(JSON.stringify ({productName : "Product-1"}));
+	} else {
+		res.statusCode = 500;
+		res.setHeader('content-type', 'text/plain');
+		res.end('Server Error !!!');
+	} 
+
+
+});
+
+
+server.listen(Port, () => {
+	console.log(`Server Running at ${HostName} : ${Port}`);
+});
+``` 
 
 
 
