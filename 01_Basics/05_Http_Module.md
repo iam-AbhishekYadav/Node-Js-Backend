@@ -57,6 +57,16 @@ console.log(`Server running at $(host): S(port)`);
 ```
 
 
+# # Http Requests
+
+- HTTP Requests are the message sent by the client to request data from the server or to perform some actions.
+- Different HTTP requests are:
+  - **`GET`** ---> It is used to read/retrieve data from a web server. 
+  - **`PUT`** ---> It is used to send data (file, form data, etc.) to the server.
+  - **`POST`** ---> It is used to modify the data on the server.
+  - **`PATCH`** --->  It modifies a part of the data. It will only replace the content that you want to update.
+  - **`DELETE`** ---> It is used to delete the data on the server at a specified location.
+
 
 
 
