@@ -56,6 +56,19 @@ app.delete('/user', (req, res) => {
 })
 ```
 
+# # What is MVC ?
+
+- **`MVC`** ---> Model-View-Controller
+- It  is a software architectural pattern used in web development to separate the application's concerns into three interconnected components.
+- Here's a brief overview of each component :-
+  - **`Model`** : This component represents the data and business logic of the application.
+  - **`View`** : This component defines the presentation and user interface of the application.
+  - **`Controller`** : This component acts as an intermediary between the model and the view. I
+
+## Optimal Folder Structure
+
+<img src="https://github.com/user-attachments/assets/c3c4967b-1a76-4168-9d22-89a5c7bc8654" width="500" height="500">
+
 
 # # How to connect Express and MongoDB ??
 
