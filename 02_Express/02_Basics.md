@@ -69,6 +69,29 @@ app.delete('/user', (req, res) => {
 
 <img src="https://github.com/user-attachments/assets/c3c4967b-1a76-4168-9d22-89a5c7bc8654" width="500" height="500">
 
+# # How to Export ?
+
+In an Express backend application, there are several ways to export functions or objects :-
+
+**`(i)`** Exporting a function or object directly : 
+``` js
+module.exports = myObject;
+```
+
+**`(ii)`** Exporting multiple functions or objects : 
+``` js
+// Exporting multiple functions
+exports.myFunction1 = myFunction1; exports.myFunction2 = myFunction2;
+
+// Exporting multiple objects
+exports.myObject1 = myObject1; exports.myObject2 = myObject2;. 
+```
+
+**`(iii)`** Exporting a default function or object :
+``` js
+module.exports = myObject;
+```
+
 
 # # How to connect Express and MongoDB ??
 
