@@ -18,7 +18,9 @@
 
 <img src="https://github.com/user-attachments/assets/c48267b7-cc0e-4042-b839-917089bb47b9"  width="500" height="500">
 
-# # JSON Web Token (JWT)
+# # JSON Web Token (JWT) 
+
+**JWT Documentation** ---> https://www.jwt.io/
 
 - It is a secure way to send information between a client and a server.
 - It is mainly used in web applications and APIs to verify users and prevent unauthorized access.
@@ -36,6 +38,7 @@ A JWT consists of three parts, separated by dots
 
 
 <img src="https://github.com/user-attachments/assets/412a762d-2981-48bb-a11f-4435a6583a94"  width="600" height="500">
+
 
 
 
