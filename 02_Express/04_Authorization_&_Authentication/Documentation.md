@@ -185,6 +185,7 @@ const jwt = require("jsonwebtoken");
 
 ## Cookie Configuration
 
+#### 1st Method
 ```js 
 const options = {
     expires : new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
@@ -198,6 +199,23 @@ res.cookie("token",token,options).status(200).json({
     message:"User logged in successfully"
 });
 ```
+
+#### 2nd Method
+
+``` js
+// Login - Set cookie with 7-day expiration
+res.cookie("token", token, { 
+    httpOnly: true, 
+    maxAge: 60 * 60 * 24 * 7 // 7 days in seconds
+})
+
+// Logout - Clear cookie by setting null and immediate expiration
+res.cookie("token", null, {
+    httpOnly: true, 
+    expires: new Date()
+})
+```
+
 
 
 
