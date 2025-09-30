@@ -235,7 +235,8 @@ res.cookie("token", null, {
 
 - req.body.token 
 - req.cokkies.token
-- req.header("Authorization").replace("Bearer", "")   ----> More Safe
+- req.header("Authorization").replace("Bearer", " ")   ----> More Safe
+
 
 
 
