@@ -71,6 +71,39 @@ sequenceDiagram
     C->>S: GET /logout
     S-->>C: Clear JWT cookie
 ```
+# # What is Bcrypt ??
+
+**Bcrypt Documentation** ---> https://www.npmjs.com/package/bcrypt
+
+- A library to help you hash passwords.
+- **`Installation`** ---> npm install bcrypt
+- **Syntax** -->
+
+```
+hash(data, salt, cb)  
+data - [REQUIRED] - the data to be encrypted.  
+salt - [REQUIRED] - the salt to be used to hash the password. (No. of Rounds)  
+cb - [OPTIONAL] - a callback to be fired once the data has been encrypted.
+```
+
+``` js
+// Import
+const bcrypt = require("bcrypt"):
+
+
+// Securing Password by Hashing
+let hashedPassword = await bcrypt.hash(password, 10);
+        try {
+            
+        } catch (error) {
+            return res.status(500).json({
+                success : false,
+                message : "Error in hashing Password",
+            })
+        }
+
+```
+
 
 # # JSON Web Token (JWT) 
 
@@ -150,39 +183,6 @@ const jwt = require("jsonwebtoken");
   - Next time the user visits the page, the cookie "remembers" his/her name.
 
 
-
-# # What is Bcrypt ??
-
-**Bcrypt Documentation** ---> https://www.npmjs.com/package/bcrypt
-
-- A library to help you hash passwords.
-- **`Installation`** ---> npm install bcrypt
-- **Syntax** -->
-
-```
-hash(data, salt, cb)  
-data - [REQUIRED] - the data to be encrypted.  
-salt - [REQUIRED] - the salt to be used to hash the password. (No. of Rounds)  
-cb - [OPTIONAL] - a callback to be fired once the data has been encrypted.
-```
-
-``` js
-// Import
-const bcrypt = require("bcrypt"):
-
-
-// Securing Password by Hashing
-let hashedPassword = await bcrypt.hash(password, 10);
-        try {
-            
-        } catch (error) {
-            return res.status(500).json({
-                success : false,
-                message : "Error in hashing Password",
-            })
-        }
-
-```
 
 
 
