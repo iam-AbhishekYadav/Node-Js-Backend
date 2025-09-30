@@ -183,7 +183,21 @@ const jwt = require("jsonwebtoken");
   - When a user visits a web page, his/her name can be stored in a cookie.
   - Next time the user visits the page, the cookie "remembers" his/her name.
 
+## Cookie Configuration
 
+```js 
+const options = {
+    expires : new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+    httpOnly : true,
+}
+
+res.cookie("token",token,options).status(200).json({
+    success : true,
+    token,
+    user,
+    message:"User logged in successfully"
+});
+```
 
 
 
