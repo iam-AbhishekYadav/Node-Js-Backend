@@ -18,6 +18,27 @@
 
 <img src="https://github.com/user-attachments/assets/c48267b7-cc0e-4042-b839-917089bb47b9"  width="500" height="500">
 
+## Secure Authentication Flow :
+
+```mermaid
+graph TD
+    A[User Registration] --> B[Hash Password]
+    B --> C[Store in Database]
+    C --> D[Registration Success]
+    
+    E[User Login] --> F[Validate Credentials]
+    F --> G{Valid?}
+    G -->|Yes| H[Generate JWT Token]
+    G -->|No| I[Return Error]
+    H --> J[Set HTTP Cookie]
+    J --> K[Login Success]
+    
+    L[Access Protected Route] --> M[Check JWT Cookie]
+    M --> N{Token Valid?}
+    N -->|Yes| O[Allow Access]
+    N -->|No| P[Redirect to Login]
+```
+
 # # JSON Web Token (JWT) 
 
 **JWT Documentation** ---> https://www.jwt.io/
