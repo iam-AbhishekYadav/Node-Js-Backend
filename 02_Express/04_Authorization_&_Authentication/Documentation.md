@@ -129,6 +129,14 @@ A JWT consists of three parts, separated by dots
 
 ## JWT Token Generation
 
+### Environment Variables
+
+``` env
+SECREATE_KEY=your_super_secure_jwt_secret
+# Note: Your code uses SECREATE_KEY (with typo)
+# Consider using JWT_SECRET for standard naming
+```
+
 ``` js
 // Import
 const jwt = require("jsonwebtoken");
@@ -215,6 +223,7 @@ res.cookie("token", null, {
     expires: new Date()
 })
 ```
+
 
 
 
