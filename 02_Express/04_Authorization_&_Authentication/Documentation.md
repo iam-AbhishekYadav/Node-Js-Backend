@@ -152,6 +152,7 @@ const jwt = require("jsonwebtoken");
             user.token = token;
             user.password = undefined;
 
+            // Cookie Configuration
             const options = {
                 expires : new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
                 httpOnly : true,
@@ -181,6 +182,7 @@ const jwt = require("jsonwebtoken");
 - Cookies were invented to solve the problem "how to remember information about the user" :
   - When a user visits a web page, his/her name can be stored in a cookie.
   - Next time the user visits the page, the cookie "remembers" his/her name.
+
 
 
 
