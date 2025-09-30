@@ -224,6 +224,18 @@ res.cookie("token", null, {
 })
 ```
 
+## Cookie-Parser
+
+- To make use of cookies in our application, cookie-parser middleware is used.
+- **`Installation`** --> npm install cookie-parser
+
+## Extract JWT token 
+
+3 Ways to Extract JWT token
+
+- req.body.token 
+- req.cokkies.token
+- req.header("Authorization").replace("Bearer", "")   ----> More Safe
 
 
 
