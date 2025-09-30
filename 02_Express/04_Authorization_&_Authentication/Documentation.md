@@ -39,6 +39,39 @@ graph TD
     N -->|No| P[Redirect to Login]
 ```
 
+## System Architecture
+```mermaid
+sequenceDiagram
+    participant C as Client/Browser
+    participant S as Server
+    participant DB as Database
+    
+    Note over C,DB: User Registration Flow
+    C->>S: POST /signup (name, email, password)
+    S->>DB: Create new user
+    DB-->>S: User created successfully
+    S-->>C: Registration success response
+    
+    Note over C,DB: User Login Flow
+    C->>S: POST /signin (email, password)
+    S->>DB: Find user by email
+    DB-->>S: User data
+    S->>S: Compare password with bcrypt
+    S->>S: Generate JWT token
+    S-->>C: Set cookie with JWT token
+    
+    Note over C,DB: Protected Route Access
+    C->>S: GET /user (with JWT cookie)
+    S->>S: Verify JWT token
+    S->>DB: Find user by ID from token
+    DB-->>S: User data
+    S-->>C: Return user information
+    
+    Note over C,DB: Logout Flow
+    C->>S: GET /logout
+    S-->>C: Clear JWT cookie
+```
+
 # # JSON Web Token (JWT) 
 
 **JWT Documentation** ---> https://www.jwt.io/
@@ -60,6 +93,53 @@ A JWT consists of three parts, separated by dots
 
 <img src="https://github.com/user-attachments/assets/412a762d-2981-48bb-a11f-4435a6583a94"  width="600" height="500">
 
+
+## JWT Token Generation
+
+``` js
+// Import
+const jwt = require("jsonwebtoken");
+
+// Verify password & generate a JWT token
+
+        const payload = {
+            email : user.email,
+            id : user._id,
+            role : user.role,
+        };
+
+
+        if(await bcrypt.compare(password,user.password)){
+            // password match or JWT Token Generation
+            let token = jwt.sign(payload,process.env.JWT_SECRET,{
+                expiresIn : "2h",
+            });
+
+            user = user.toObject();
+            user.token = token;
+            user.password = undefined;
+
+            const options = {
+                expires : new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+                httpOnly : true,
+            }
+
+            res.cookie("token",token,options).status(200).json({
+                success : true,
+                token,
+                user,
+                message:"User logged in successfully"
+            });
+        }
+        else {
+            // password not match
+            return res.status(403).json({
+                success : false,
+                message : "Password does not match",
+            })
+        }
+
+```
 
 # # What is Cookies ??
 
